@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+
+.container-login {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container-contact {
+    top: 55%;
+}
+
+.container-login {
+    width: 410px;
+    padding: 30px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.container-login .text {
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.text a {
+    color: #000;
+    text-decoration: none;
+}
+
+.container-login form {
+    margin-top: -20px;
+}
+
+.container-login form .data {
+    height: 45px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+form .data label {
+    font-size: 18px;
+}
+
+form .data input {
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 17px;
+    border-radius: 8px;
+    border: 1px solid silver;
+}
+
+form .data textarea {
+    width: 100%;
+    padding-left: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid silver;
+}
+
+form .forgot-pass {
+    text-align: right;
+    margin-top: -8px;
+}
+
+form .forgot-pass a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+form .forgot-pass a:hover {
+    font-weight: 600;
+}
+
+form button {
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    background: #171941;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-btn {
+    margin-top: 5rem;
+}
+
+form button:hover {
+    color: #171941;
+    background: #fff;
+    border: 2px solid #171941;
+}
+
+form .signup-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+form .signup-link a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+form .signup-link a:hover {
+    font-weight: 600;
+}
+
+.footer {
+    margin-top: 47rem;
+}

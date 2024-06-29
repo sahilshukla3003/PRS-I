@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>ReviewScope | Payment Success</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/success.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="success">
+    <div class="container">
+        <div class="text">
+            <i class="fa-solid fa-check-circle"></i> Payment Success
+        </div>
+        <div class="message">
+            <p>Thank you for your payment. Your payment has been successfully processed. You will receive an email confirmation shortly.</p>
+        </div>
+        <div class="btn btn-dark success-btn" data-aos="zoom-in">
+            <a href="{% url 'home' %}">
+                Go to Home <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

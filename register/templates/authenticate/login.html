@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>ReviewScope | login</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="login">
+    <div class="container-login">
+        <div class="text">
+            <i class="fa-regular fa-circle-user"></i> Login
+        </div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="data">
+                <label>Email</label>
+                <input type="text" name="email" required />
+            </div>
+            <div class="data">
+                <label>Password</label>
+                <input type="password" name="password" required />
+            </div>
+            <div class="forgot-pass">
+                <a href="{% url 'forgot' %}">Forgot Password?</a>
+            </div>
+            <button type="submit">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i> login
+            </button>
+            <div class="signup-link">
+                Not a User? <a href="{% url 'register' %}">Signup now</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock content %}

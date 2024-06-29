@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'assets/rs.svg' %}" type="svg">
+    {% block title %}
+    <title>ReviewScope | base</title>
+    {% endblock title %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block css %}
+    {% endblock css %}
+</head>
+<body>
+    <header class="primary-header" style="background-color: white;">
+        <nav class="navbar container-navbar">
+            <a href="{% url 'home' %}" class="logo">PRS-I</a>
+            <button class="nav-toggle">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-list">
+                <li>
+                    <a href="{% url 'home' %}" class="nav-link">Home</a>
+                </li>
+                <li>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'history' %}" class="nav-link">Product Reviews</a>
+                </li>
+                <li>
+                    <a href="{% url 'custom' %}" class="nav-link">Custom Review</a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}" class="nav-link">About</a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="button">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="button">Login</a>
+            <a href="{% url 'register' %}" class="button2">Sign Up</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block footer %}
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="row">
+                <div class="footer-col" data-aos="fade-right">
+                    <h4>ReviewScope</h4>
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#faqs">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-down">
+                    <h4>Creators</h4>
+                    <ul>
+                        <li><a href="#">Sahil Shukla</a></li>
+                        <li><a href="#">Sukhman Hundle</a></li>
+                        <li><a href="#">Baburao Konuri</a></li>
+                        <li><a href="#">Imran Ansari</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-left">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/sahilshukla3003"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/sahil-shukla-03bb10229/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock footer %}
+    <script>
+        const isScrolling = () => {
+            const headerEl = document.querySelector('.primary-header')
+            let windowPosition = window.scrollY > 250
+            headerEl.classList.toggle('active', windowPosition)
+        }
+        window.addEventListener('scroll', isScrolling)
+    </script>
+    <script src="{% static 'js/base.js' %}"></script>
+    {% block scripts %}
+    {% endblock %}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ccf941b7da.js" crossorigin="anonymous"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            delay: 200,
+        });
+    </script>
+</body>
+</html>

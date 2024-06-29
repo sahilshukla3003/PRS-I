@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+.payments {
+    padding-top: 125px;
+}
+
+.payments .container {
+    max-width: 1265px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* .payments .container form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+} */
+
+.payments .container form .row .details .title {
+    font-size: 24px;
+    color: #171941;
+    padding-left: 7px;
+    padding-bottom: 5px;
+}
+
+.payments .container form .row .details .inputBox {
+    margin: 15px 0;
+}
+
+.payments .container form .row .details .inputBox span {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #171941;
+    display: block;
+}
+
+.payments .container form .row .details .inputBox input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 15px;
+    padding-left: 20px;
+    font-size: 15px;
+    background-color: #ebebeb;
+    text-transform: none;
+}
+
+.payments .container form .row .details .inputBox input:focus {
+    border: 1px solid #000;
+}
+
+.payments .container form .row .details .flex {
+    display: flex;
+    gap: 15px;
+}
+
+.payments .container form .row .details .flex .inputBox {
+    margin-top: 5px;
+}
+
+.payments .container form .row .details .inputBox img {
+    height: 34px;
+    margin-top: 5px;
+    padding-left: 10px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.payments .form-control::placeholder {
+    opacity: 0.69;
+}
+
+.payments .container form #submit-btn {
+    margin-top: 5px;
+    font-size: 18px;
+    background: #171941;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px 10px 30px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.payments .container form #submit-btn:hover {
+    color: #171941;
+    background: #fff;
+    border: 2px solid #171941;
+}

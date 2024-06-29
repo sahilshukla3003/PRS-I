@@ -1,0 +1,3 @@
+web: gunicorn 'reviewscope.wsgi'
+web: gunicorn 'api.wsgi'
+web: gunicorn 'register.wsgi'

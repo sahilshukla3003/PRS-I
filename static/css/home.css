@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+#learn {
+    margin-top: 8rem;
+}
+
+#search-bar {
+    border: 2px solid #171941;
+}
+
+.searchbtn {
+    background-color: #171941;
+    color: #fff;
+}
+
+.footer {
+    margin-top: 8rem;
+}
+
+.heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.mr-card {
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    grid-template-rows: 20px 50px 1fr 50px;
+    box-shadow: 0px 6px 10px rgba(74, 70, 74, 0.414);
+}
+
+.mr-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 2rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.stars {
+    position: relative;
+    text-decoration: none;
+    color: rgba(235, 139, 139, 0.9);
+}
+
+.stars ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+.stars ul li {
+    margin: auto 0.3rem;
+    font-size: 1.1rem;
+}
+
+.mr-card .stars ul li:last-child {
+    margin-left: 1.4rem;
+    font-size: 1.5rem;
+}
+
+.mr-card .stars ul li:nth-child(1) {
+    margin: auto 0;
+}
+
+#mr-btn {
+    background-color: #171941;
+}
+
+#mr-btn:hover {
+    border: 2px solid #171941;
+    color: #171941;
+    background-color: #fff;
+}
+
+/* loader animation */
+.spinner {
+    margin: 100px auto;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: 10px;
+    display: none;
+}
+
+.spinner > div {
+    background-color: #171941;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+.spinner .rect2 {
+    animation-delay: -1.1s;
+}
+.spinner .rect3 {
+    animation-delay: -1.0s;
+}
+.spinner .rect4 {
+    animation-delay: -0.9s;
+}
+.spinner .rect5 {
+    animation-delay: -0.8s;
+}
+
+@keyframes sk-stretchdelay {
+    0%,
+    40%,
+    100% {
+        transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1.0);
+    }
+}
+
+/* accordian section */
+.accordion {
+    box-shadow: 0px 6px 10px rgba(74, 70, 74, 0.414);
+}
+
+.accordion-item {
+    border: 1px solid #171941;
+}
+
+.accordion-item .accordion-button {
+    background-color: #fff;
+    color: #171941;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.accordion-item .accordion-button:hover {
+    padding-left: 2.3rem;
+}
+
+/*Pricing Cards*/
+.pricing .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    margin: 40px 0;
+}
+
+.pricing .container .card-price {
+    position: relative;
+    min-width: 320px;
+    height: 440px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 5px rgba(0, 0, 0, 0.3),
+        -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 30px;
+}
+
+.pricing .container .card-price .box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #171941;
+    border: 2px solid #1e1f23;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.pricing .container .card-price .box:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+
+.pricing .container .card-price .box:hover {
+    transform: translateY(-50px);
+    box-shadow: 0 40px 70px #171941;
+}
+
+.pricing .container .card-price .box .content {
+    padding: 20px;
+    text-align: center;
+}
+
+.pricing .container .card-price .box .content h2 {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(255, 255, 255, 0.05);
+}
+
+.pricing .container .card-price .box .content h3 {
+    font-size: 1.8em;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.pricing .container .card-price .box .content p {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.pricing .container .card-price:hover .box .content h3,
+.pricing .container .card-price:hover .box .content p,
+.features li .list-name:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.pricing .container .card-price .box .content a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #2db94d;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 400;
+    color: #fff;
+    box-shadow: 0 10px 20px #171941;
+    transition: 0.25s all;
+}
+
+.pricing .container .card-price .box .content a:hover {
+    background: #171941;
+    border: 2px solid #2db94d;
+}
+
+.pricing .container .card-price .box .content .middle-a {
+    background: #2db94e56;
+}
+
+.features {
+    padding-left: 0;
+}
+
+.features li {
+    margin-bottom: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.features li .list-name {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.features li .icon {
+    font-size: 15px;
+}
+
+.features li .icon.check {
+    color: #2db94d;
+}
+
+.features li .icon.cross {
+    color: #cd3241;
+}
+
+/*Pricing Cards End */

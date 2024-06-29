@@ -1,0 +1,38 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+.success {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin-top: 8rem;
+    margin-bottom: 7.2rem;
+    text-align: center;
+}
+
+.text {
+    color: #171941;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.message {
+    color: #171941;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.success-btn {
+    font-size: 1.2rem;
+    border-radius: 100vw;
+    padding: 0.5rem 2rem;
+    background-color: #171941;
+}
+
+.success-btn:hover {
+    border: 2px solid #171941;
+    color: #171941;
+    background-color: #fff;
+}

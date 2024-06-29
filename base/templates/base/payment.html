@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>ReviewScope | Payment</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/payment.css' %}">
+{% endblock css %}
+
+{% block content %}
+<!-- payments section -->
+<section class="payments pb-5">
+    <div class="container pb-5">
+        <form class="payment-form" method="POST">
+            {% csrf_token %}
+            <div class="row gy-5">
+                <div class="col-sm-6 details" data-aos="fade-right">
+                    <h1 class="title fw-bold">Billing Address</h1>
+                    <div class="inputBox">
+                        <span>Name</span>
+                        <input type="text" class="form-control" placeholder="john deo" name="name" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>Email</span>
+                        <input type="email" class="form-control" placeholder="example@example.com" name="email" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>Address</span>
+                        <input type="text" class="form-control" placeholder="room - street - locality" name="address" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>City</span>
+                        <input type="text" class="form-control" placeholder="mumbai" name="city" required>
+                    </div>
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>Country</span>
+                            <input type="text" class="form-control" placeholder="india" name="country" required>
+                        </div>
+                        <div class="inputBox">
+                            <span>Zip code</span>
+                            <input type="number" class="form-control" placeholder="123 456" name="zipcode" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 details" data-aos="fade-left">
+                    <h1 class="title fw-bold">Payment Method</h1>
+                    <div class="inputBox">
+                        <span>Cards Accepted</span>
+                        <img src="{% static 'assets/card_img.png' %}" alt="">
+                    </div>
+                    <div class="inputBox">
+                        <span>Name on Card</span>
+                        <input type="text" class="form-control" placeholder="mr. john deo" name="cardname" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>Card Number</span>
+                        <input type="number" class="form-control" placeholder="1111-2222-3333-4444" name="cardnumber" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>Exp Month</span>
+                        <input type="text" class="form-control" placeholder="january" name="emonth" required>
+                    </div>
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>Exp Year</span>
+                            <input type="number" class="form-control" placeholder="2022" name="eyear" required>
+                        </div>
+                        <div class="inputBox">
+                            <span>CVV</span>
+                            <input type="number" class="form-control" placeholder="1234" name="cvv" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a id="submit-btn" class="btn btn-primary" href="{% url 'success' %}" role="button">
+                    Pay ₹{{ amt }}
+                </a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock content %}

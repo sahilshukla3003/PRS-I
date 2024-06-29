@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>ReviewScope | Home</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock css %}
+
+{% block content %}
+<!-- hero section -->
+<section id="learn" class="p-5">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md p-5" data-aos="fade-right">
+                <h2 class="fw-bold">Review-System</h2>
+                <p class="lead">
+                    PRS-I extracts, analyzes, and summarizes online reviews to help users make informed decisions with ease.
+                </p>
+                <p class="lead">
+                    Our product provides a comprehensive view of customer sentiment, benefiting consumers and businesses.
+                </p>
+                <p class="lead">
+                    Try it out below by entering a product name
+                </p>
+                <!-- search bar -->
+                <form class="d-flex mt-3" method="POST">
+                    {% csrf_token %}
+                    <input id="search-bar" class="form-control me-2" type="search" placeholder="Enter Product URL" name="query" aria-label="Search">
+                    <button class="btn btn-dark searchbtn" onclick="scrollToLoader()" type="submit">
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="col-md" data-aos="fade-left">
+                <img class="img-fluid" src="{% static 'assets/hero.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI review summary section -->
+{% if avg %}
+<section class="modelreview py-5" id="ai-review">
+    <div class="container">
+        <div class="heading">
+            <h1 class="fw-bold">AI Generated Review</h1>
+        </div>
+        <div class="mr-card card mx-auto mb-3" data-aos="zoom-in" style="max-width:90%;">
+            <div class="row g-0">
+                <!-- <div class="col-md-4">
+                    <img src="{{ img }}" class="img-fluid rounded-start card-img" alt="...">
+                </div> -->
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">{{ p_name }}</h3>
+                        <p class="card-text">
+                            <div class="stars">
+                                <ul>
+                                    <li class="rating">Rating: </li>
+                                    {% for i in iter %}
+                                    {% if i <= avg %}
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    {% else %}
+                                    <li><i class="fa-regular fa-star"></i></li>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <li class="model-rating fw-bold">
+                                        {{ avg }} / 5
+                                    </li>
+                                </ul>
+                            </div>
+                        </p>
+                        <p class="card-text">
+                            {{ summary }}
+                        </p>
+                        {% if user.is_authenticated %}
+                        <a id="mr-btn" class="btn btn-primary" href="{% url 'reviews' pname=p_name  %}" role="button">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                        {% else %}
+                        <a id="mr-btn" class="btn btn-primary" href="{% url 'login' %}" role="button">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                        {% endif %}
+                        <p class="card-text mt-3">
+                            <small class="text-body-secondary">
+                                Last updated {{ created }}}
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<!-- loader -->
+<div class="spinner" id="loader">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+{% endif %}
+
+<!-- accordion section -->
+<section class="faqs py-5 mt-3" id="faqs">
+    <div class="heading pricing pt-5">
+        <h1 class="fw-bold">Frequently Asked Questions</h1>
+    </div>
+    <div class="container" style="max-width:1100px;">
+        <div class="accordion accordion-flush" id="questions" data-aos="fade-up">
+            <!-- item #1 -->
+            <div class="accordion-item" data-aos="fade-up">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#question-one">
+                        How does it work?
+                    </button>
+                </h2>
+                <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+                    <div class="accordion-body">
+                        At ReviewScope, we make it easy for you to access product reviews and make informed decisions
+                        before making a purchase. Simply search for products using our search bar and access reviews from various sources.
+                        Our detailed reviews provide insights into product performance, quality, and satisfaction levels, along with
+                        ratings and feedback from other users.
+                    </div>
+                </div>
+            </div>
+            <!-- item #2 -->
+            <div class="accordion-item" data-aos="fade-up">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#question-two">
+                        How reliable/accurate is it?
+                    </button>
+                </h2>
+                <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+                    <div class="accordion-body">
+                        At ReviewScope, we strive for reliability and accuracy. Our advanced algorithms and machine learning analyze
+                        multiple sources of reviews to extract key information. While we prioritize data accuracy, it's important to
+                        consider that online reviews can vary in reliability. We recommend using our reviews as a valuable source of
+                        information but also conducting your research from multiple sources for a well-rounded understanding.
+                        We continuously improve our algorithms and update our database to maintain accuracy and provide trustworthy
+                        insights for your decision-making process.
+                    </div>
+                </div>
+            </div>
+            <!-- item #3 -->
+            <div class="accordion-item" data-aos="fade-up">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#question-three">
+                        What are the benefits of using this?
+                    </button>
+                </h2>
+                <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
+                    <div class="accordion-body">
+                        ReviewScope offers streamlined decision-making with a comprehensive view of customer sentiment.
+                        Our website extracts and summarizes online reviews, presenting rating scores, pros, cons, and overall sentiment
+                        in an intuitive format. This benefits consumers, businesses, and researchers by providing reliable
+                        insights to inform decision-making. Additionally, our platform saves time by bringing all the reviews
+                        of a product to one place, eliminating the need to search multiple websites. With ReviewScope, users can make
+                        informed decisions and choose products or services that align with their needs and preferences.
+                    </div>
+                </div>
+            </div>
+            <!-- item #4 -->
+            <div class="accordion-item" data-aos="fade-up">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#question-four">
+                        Which plan should I choose?
+                    </button>
+                </h2>
+                <div id="question-four" class="accordion-collapse collapse" data-bs-parent="#questions">
+                    <div class="accordion-body">
+                        We have a 3 plans , Soldier,Commander and Prince you can find more info down below!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- pricing section -->
+<section class="pricing py-5" id="pricing">
+    <div class="heading pricing pt-5">
+        <h1 class="fw-bold">Pricing</h1>
+    </div>
+    <div class="container">
+        <div class="card-price" data-aos="fade-right">
+            <div class="box">
+                <div class="content">
+                    <h2>01</h2>
+                    <h3>Soldier</h3>
+                    <ul class="features">
+                        <p>₹34/mo when you renew</p>
+                        <li>
+                            <span class="list-name">6 Reviews per day</span>
+                            <span class="icon check"><i class="fas fa-check"></i></span>
+                        </li>
+                        <li>
+                            <span class="list-name">Store 50+ reviews</span>
+                            <span class="icon check"><i class="fas fa-check"></i></span>
+                        </li>
+                        <li>
+                            <span class="list-name">No ads & faster</span>
+                            <span class="icon check"><i class="fas fa-check"></i></span>
+                        </li>
+                    </ul>
+                    <a href="{% url 'payment' plan='soldier' %}">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-price" data-aos="fade-up">
+            <div class="box">
+                <div class="content">
+                    <h2>02</h2>
+                    <h3>Commander</h3>
+                    <ul class="features">
+                        <p>₹69/mo when you renew</p>
+                        <li>
+                            <span class="list-name">25 Reviews per day</span>
+                            <span class="icon check"><i class="fas fa-check"></i></span>
+                        </li>
+                        <li>
+                            <span class="list-name">Store 150+ reviews</span>
+                            <span class="icon check"><i class="fas fa-check"></i></span>
+                        </li>
+                        <li>
+                            <span class="list-name">Soldier Benefits</span>
+                            <span class="icon check"><i class="fas fa-check"></i></span>
+                        </li>
+                    </ul>
+                    <a class="middle-a" href="{% url 'payment' plan='commander' %}">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-price" data-aos="fade-left">
+            <div class="box">
+                <div class="content">
+                    <h2>03</h2>
+                    <h3>Prince</h3>
+                    <ul class="features">
+                        <p>₹138/mo when you renew</p>
+                        <li>
+                            <span class="list-name">69 Reviews per day</span>
+                            <span class="icon check"><i class="fas fa-check"></i></span>
+                        </li>
+                        <li>
+                            <span class="list-name">Store 420+ reviews</span>
+                            <span class="icon check"><i class="fas fa-check"></i></span>
+                        </li>
+                        <li>
+                            <span class="list-name">Commander Benefits</span>
+                            <span class="icon check"><i class="fas fa-checl"></i></span>
+                        </li>
+                    </ul>
+                    <a href="{% url 'payment' plan='prince' %}">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    setTimeout(function () {
+            const loader = document.getElementById("loader");
+            loader.scrollIntoView({ behavior: "smooth" });
+        }, 3000);
+</script>
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

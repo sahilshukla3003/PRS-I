@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>ReviewScope | Contact</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contact">
+    <div class="container-login container-contact">
+        <div class="text">
+            <i class="fa-regular fa-circle-user"></i> Contact Us
+        </div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="data">
+                <label>Name</label>
+                <input type="text" name="uname" required />
+            </div>
+            <div class="data">
+                <label>Email</label>
+                <input type="text" name="email" required />
+            </div>
+            <div class="data">
+                <label>Message</label>
+                <textarea name="message" rows="5" cols="50" required></textarea>
+            </div>
+            <button type="submit" class="contact-btn">
+                <i class="fa-solid fa-paper-plane"></i> Send
+            </button>
+            <div class="signup-link">
+                Not a User? <a href="{% url 'register' %}">Signup now</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock content %}
