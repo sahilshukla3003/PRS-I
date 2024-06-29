@@ -8,7 +8,7 @@ This project is a cutting-edge product review analysis tool leveraging Natural L
 ### Product Review Analyzer
 ![Demo Image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/4a486a48-6842-4bac-87d4-a50b2ea4731e)
 
-(![image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/780c4371-fc4c-479c-b17c-28fa7004a4de)
+![image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/780c4371-fc4c-479c-b17c-28fa7004a4de)
 
 
 ### Personalized Reviews
