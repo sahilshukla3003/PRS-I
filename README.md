@@ -5,13 +5,12 @@ This project is a cutting-edge product review analysis tool leveraging Natural L
 
 ## Demo
 
-# Product Review analyzer
-![Demo Image](![image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/4a486a48-6842-4bac-87d4-a50b2ea4731e)
-)
+### Product Review Analyzer
+![Demo Image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/4a486a48-6842-4bac-87d4-a50b2ea4731e)
 
-# Personalized Reviews
-![Demo Image](![image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/6e475305-71ff-45b2-97d0-1ae77637842f)
-)
+### Personalized Reviews
+![Demo Image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/6e475305-71ff-45b2-97d0-1ae77637842f)
+
 
 ## Features
 - **Product Link Entry:** Users can input a product link, and the review text is automatically extracted from product pages on platforms such as Amazon and Flipkart.
