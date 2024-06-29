@@ -67,7 +67,7 @@ A robust database system is used to:
 ### Steps
 1. **Clone the Repository:**
    ```sh
-   git clone https://github.com/your-repo/AI-Product-Review-System.git
+   git clone https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-.git
    ```
 2. **Backend Setup:**
    - Navigate to the backend directory.
