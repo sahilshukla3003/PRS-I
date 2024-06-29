@@ -8,7 +8,6 @@ This project is a cutting-edge product review analysis tool leveraging Natural L
 ### Product Review Analyzer
 ![Demo Image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/4a486a48-6842-4bac-87d4-a50b2ea4731e)
 
-![image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/780c4371-fc4c-479c-b17c-28fa7004a4de)
 
 
 ### Personalized Reviews
@@ -102,6 +101,8 @@ A robust database system is used to:
    - The sentiment, summary, and graphical representation are displayed on the main website.
 4. **Personalized Reviews:**
    - Users can view personalized review recommendations based on their previous interactions and preferences.
+     
+   ![image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/780c4371-fc4c-479c-b17c-28fa7004a4de)
 
 ## Contributing
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
