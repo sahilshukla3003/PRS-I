@@ -8,6 +8,7 @@ This project is a cutting-edge product review analysis tool leveraging Natural L
 ### Product Review Analyzer
 ![Demo Image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/4a486a48-6842-4bac-87d4-a50b2ea4731e)
 
+
 ### Personalized Reviews
 ![Demo Image](https://github.com/sahilshukla3003/AI-Based-Product-Review-System-PRS-I-/assets/124785012/6e475305-71ff-45b2-97d0-1ae77637842f)
 
@@ -109,6 +110,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 For any queries or support, contact us at [sahilshukla959@gmail.com].
 
----
 
-Feel free to customize this README as per your project's specifics and add any additional sections that might be necessary.
