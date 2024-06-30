@@ -45,8 +45,8 @@ The REST API connects the Chrome extension to the backend, handling:
 
 ### NLP Model
 The NLP model, developed using the NLTK library, processes review texts to:
-- Clean and tokenize the text.
-- Analyze sentiment using pre-trained models and custom algorithms.
+- Clean and tokenize the text
+- Analyze sentiment using pre-trained models and custom algorithms
 - Generate sentiment scores and summaries for the reviews.
 
 ### Database
